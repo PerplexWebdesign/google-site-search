@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+    <!--[if IE 9]> <html xml:lang="nl" lang="nl" class="ie ie9 lte9"> <![endif]-->
+    <!--[if !IE]><!--> <html xml:lang="nl" lang="nl"> <!--<![endif]-->
+    <head>
+
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <style>
+    .flexbox .order-parent {
+        display:-webkit-box;
+        display:-moz-box;
+        display:-ms-flexbox;
+        display:-webkit-flex;
+        display:flex;
+        -webkit-box-direction:normal;
+        -moz-box-direction:normal;
+        -webkit-flex-direction:column;
+        -ms-flex-direction:column;
+        flex-direction:column;
+    }
+
+    .flexbox .order-1 {
+        -webkit-order:1;
+        -ms-flex-order:1;
+        order:1;
+    }
+
+    .flexbox .order-2 {
+        -webkit-order:2;
+        -ms-flex-order:2;
+        order:2;
+    }
+
+    .flexbox .order-3 {
+        -webkit-order:3;
+        -ms-flex-order:3;
+        order:3;
+    }
+
+    @media screen and (min-width: 48em) {
+        .flexbox .order-parent {display: block;}
+        .flexbox [class*="order-"] {}
+
+    }
+
+    .order-1 .content {padding: 24px; background: yellow; } .order-2 .content  {padding: 24px; background: blue; } .order-3 .content {padding: 24px; background: green; }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="grid order-parent">
+        <div class="col-1-1"><h1>Flexbox: Wijzigen van volgorde</h1></div>
+        <aside class="col-1-1 col-md-1-3 order-3"><div class="content">sidebar</div></aside>
+        <main class="col-1-1 col-md-2-3 order-1"><div class="content">content</div></main>
+        <section class="col-1-1 col-lg-1-1 order-2"><div class="content">info</div></section>
+    </div>
+</div>
+
+	
+</body>
+</html>
